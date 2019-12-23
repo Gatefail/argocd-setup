@@ -3,8 +3,9 @@ kind: Kustomization
 namespace: argocd
 
 bases:
-    - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v1.0.1
+    - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v1.3.6
 
 resources:
     - github-secret-sealed.json
+    - project-alpha-ns.yaml
     - applications/some-first-app.yaml

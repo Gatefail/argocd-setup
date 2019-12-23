@@ -16,12 +16,6 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
     path: guestbook
-    # kustomize specific config
-    kustomize:
-      # Optional image name prefix
-      # Optional images passed to "kustomize edit set image".
-      images:
-      - gcr.io/heptio-images/ks-guestbook-demo:0.2
 
   # Destination cluster and namespace to deploy the application
   destination:
