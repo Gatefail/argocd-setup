@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  statusbadge.enabled: 'true'
+  users.anonymous.enabled: "true"
+  repositories: |
+    - url: git@github.com:Topping/my-app-deployment.git
+
+  repository.credentials: |
+    - url: git@github.com:Topping
+      sshPrivateKeySecret:
+        name: github-secret
+        key: github_personal

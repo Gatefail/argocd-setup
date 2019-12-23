@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: guestbook
+    namespace: argocd
+spec:
+    # kustomize specific config
+    kustomize:
+        namePrefix: prod-
