@@ -1,10 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: argocd
-
+commonLabels:
+    environment: local
+      
 resources:
     - ../../base
 
 patchesStrategicMerge:
-    - ./some-first-app.yaml
-    - ./argo-cd-cm.yaml
+    - ./argo-cd-app.yaml

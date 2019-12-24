@@ -6,10 +6,10 @@ data:
   statusbadge.enabled: 'true'
   users.anonymous.enabled: "true"
   repositories: |
-    - url: git@github.com:Topping/my-app-deployment.git
+    - url: git@github.com:Gatefail/argocd-setup.git
 
   repository.credentials: |
-    - url: git@github.com:Topping
+    - url: git@github.com:Gatefail
       sshPrivateKeySecret:
         name: github-secret
         key: github_personal

@@ -1,14 +1,10 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: project-alpha
----
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
   labels:
     app.kubernetes.io/name: applications.argoproj.io
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: applications.argoproj.io
 spec:
   group: argoproj.io
@@ -1766,6 +1762,7 @@ metadata:
   labels:
     app.kubernetes.io/name: appprojects.argoproj.io
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: appprojects.argoproj.io
 spec:
   group: argoproj.io
@@ -2306,6 +2303,7 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-application-controller
   namespace: argocd
 ---
@@ -2316,6 +2314,7 @@ metadata:
     app.kubernetes.io/component: dex-server
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-dex-server
   namespace: argocd
 ---
@@ -2326,6 +2325,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server
   namespace: argocd
 ---
@@ -2336,6 +2336,7 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-application-controller
   namespace: argocd
 rules:
@@ -2376,6 +2377,7 @@ metadata:
     app.kubernetes.io/component: dex-server
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-dex-server
   namespace: argocd
 rules:
@@ -2396,6 +2398,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server
   namespace: argocd
 rules:
@@ -2440,6 +2443,7 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-application-controller
 rules:
 - apiGroups:
@@ -2460,6 +2464,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server
 rules:
 - apiGroups:
@@ -2491,6 +2496,7 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-application-controller
   namespace: argocd
 roleRef:
@@ -2509,6 +2515,7 @@ metadata:
     app.kubernetes.io/component: dex-server
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-dex-server
   namespace: argocd
 roleRef:
@@ -2527,6 +2534,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server
   namespace: argocd
 roleRef:
@@ -2545,6 +2553,7 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-application-controller
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -2562,6 +2571,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -2575,9 +2585,9 @@ subjects:
 apiVersion: v1
 data:
   repositories: |
-    - url: git@github.com:Topping/my-app-deployment.git
+    - url: git@github.com:Gatefail/argocd-setup.git
   repository.credentials: |
-    - url: git@github.com:Topping
+    - url: git@github.com:Gatefail
       sshPrivateKeySecret:
         name: github-secret
         key: github_personal
@@ -2588,6 +2598,7 @@ metadata:
   labels:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-cm
   namespace: argocd
 ---
@@ -2597,6 +2608,7 @@ metadata:
   labels:
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-rbac-cm
   namespace: argocd
 ---
@@ -2615,6 +2627,7 @@ metadata:
   labels:
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-ssh-known-hosts-cm
   namespace: argocd
 ---
@@ -2625,6 +2638,7 @@ metadata:
   labels:
     app.kubernetes.io/name: argocd-tls-certs-cm
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-tls-certs-cm
   namespace: argocd
 ---
@@ -2634,6 +2648,7 @@ metadata:
   labels:
     app.kubernetes.io/name: argocd-secret
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-secret
   namespace: argocd
 type: Opaque
@@ -2645,6 +2660,7 @@ metadata:
     app.kubernetes.io/component: dex-server
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-dex-server
   namespace: argocd
 spec:
@@ -2659,6 +2675,7 @@ spec:
     targetPort: 5557
   selector:
     app.kubernetes.io/name: argocd-dex-server
+    environment: local
 ---
 apiVersion: v1
 kind: Service
@@ -2667,6 +2684,7 @@ metadata:
     app.kubernetes.io/component: metrics
     app.kubernetes.io/name: argocd-metrics
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-metrics
   namespace: argocd
 spec:
@@ -2677,6 +2695,7 @@ spec:
     targetPort: 8082
   selector:
     app.kubernetes.io/name: argocd-application-controller
+    environment: local
 ---
 apiVersion: v1
 kind: Service
@@ -2685,6 +2704,7 @@ metadata:
     app.kubernetes.io/component: redis
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-redis
   namespace: argocd
 spec:
@@ -2694,6 +2714,7 @@ spec:
     targetPort: 6379
   selector:
     app.kubernetes.io/name: argocd-redis
+    environment: local
 ---
 apiVersion: v1
 kind: Service
@@ -2702,6 +2723,7 @@ metadata:
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-repo-server
   namespace: argocd
 spec:
@@ -2716,6 +2738,7 @@ spec:
     targetPort: 8084
   selector:
     app.kubernetes.io/name: argocd-repo-server
+    environment: local
 ---
 apiVersion: v1
 kind: Service
@@ -2724,6 +2747,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server
   namespace: argocd
 spec:
@@ -2738,6 +2762,7 @@ spec:
     targetPort: 8080
   selector:
     app.kubernetes.io/name: argocd-server
+    environment: local
 ---
 apiVersion: v1
 kind: Service
@@ -2746,6 +2771,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server-metrics
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server-metrics
   namespace: argocd
 spec:
@@ -2756,6 +2782,7 @@ spec:
     targetPort: 8083
   selector:
     app.kubernetes.io/name: argocd-server
+    environment: local
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -2764,18 +2791,21 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-application-controller
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-application-controller
+      environment: local
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-application-controller
+        environment: local
     spec:
       containers:
       - command:
@@ -2810,16 +2840,19 @@ metadata:
     app.kubernetes.io/component: dex-server
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-dex-server
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-dex-server
+      environment: local
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-dex-server
+        environment: local
     spec:
       containers:
       - command:
@@ -2857,16 +2890,19 @@ metadata:
     app.kubernetes.io/component: redis
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-redis
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-redis
+      environment: local
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-redis
+        environment: local
     spec:
       containers:
       - args:
@@ -2887,16 +2923,19 @@ metadata:
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-repo-server
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-repo-server
+      environment: local
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-repo-server
+        environment: local
     spec:
       automountServiceAccountToken: false
       containers:
@@ -2941,16 +2980,19 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    environment: local
   name: argocd-server
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-server
+      environment: local
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-server
+        environment: local
     spec:
       containers:
       - command:
@@ -2992,37 +3034,60 @@ spec:
         name: tls-certs
 ---
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  labels:
+    environment: local
+  name: argocd-project
+  namespace: argocd
+spec:
+  description: Argocd-Project
+  destinations:
+  - namespace: argocd
+    server: https://kubernetes.default.svc
+  roles:
+  - description: Sync privileges for argocd
+    jwtTokens:
+    - iat: 1535390316
+    name: argocd-role
+    policies:
+    - p, proj:argocd-project:argocd-role, applications, sync, argocd-project/argocd-app,
+      allow
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  name: guestbook
+  labels:
+    environment: local
+  name: argocd-app
   namespace: argocd
 spec:
   destination:
-    namespace: project-alpha
+    namespace: argocd
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: apps
     jsonPointers:
     - /spec/replicas
     kind: Deployment
-  kustomize:
-    namePrefix: prod-
-  project: default
+  project: argocd-project
   source:
-    path: guestbook
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    path: argo-cd/overlays/local
+    repoURL: git@github.com:Gatefail/argocd-setup.git
     targetRevision: HEAD
   syncPolicy:
-    automated:
-      prune: true
+    manual:
+      prune: false
       selfHeal: true
 ---
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   creationTimestamp: null
+  labels:
+    environment: local
   name: github-secret
   namespace: argocd
 spec:
