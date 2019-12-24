@@ -13,6 +13,7 @@ spec:
   source:
     repoURL: git@github.com:Gatefail/argocd-applications.git
     targetRevision: HEAD
+    path: .
     
   # Destination cluster and namespace to deploy the application
   destination:
