@@ -8,6 +8,7 @@ spec:
   # Allow manifests to deploy from any Git repos
   sourceRepos:
   - 'git@github.com:Gatefail/argocd-setup.git'
+  - 'git@github.com:Gatefail/argocd-applications.git'
   # Only permit applications to deploy to the argocd namespace in the same cluster
   destinations:
   - namespace: argocd
