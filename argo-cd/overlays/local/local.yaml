@@ -3042,7 +3042,7 @@ metadata:
   namespace: argocd
 spec:
   clusterResourceWhitelist:
-  - group: ""
+  - group: '*'
     kind: '*'
   description: Argocd-Project
   destinations:
@@ -3050,14 +3050,12 @@ spec:
     server: https://kubernetes.default.svc
   roles:
   - description: Sync privileges for argocd
-    jwtTokens:
-    - iat: 1535390316
     name: argocd-role
     policies:
     - p, proj:argocd-project:argocd-role, applications, sync, argocd-project/argocd-app,
       allow
   sourceRepos:
-  - '*'
+  - git@github.com:Gatefail/argocd-setup.git
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application

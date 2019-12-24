@@ -6,6 +6,7 @@ commonLabels:
       
 resources:
     - ../../base
+    - ./company-projects-app.yaml
 
 patchesStrategicMerge:
     - ./argo-cd-app.yaml
