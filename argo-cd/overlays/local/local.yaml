@@ -3041,6 +3041,9 @@ metadata:
   name: argocd-project
   namespace: argocd
 spec:
+  clusterResourceWhitelist:
+  - group: ""
+    kind: '*'
   description: Argocd-Project
   destinations:
   - namespace: argocd
@@ -3053,6 +3056,8 @@ spec:
     policies:
     - p, proj:argocd-project:argocd-role, applications, sync, argocd-project/argocd-app,
       allow
+  sourceRepos:
+  - '*'
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
