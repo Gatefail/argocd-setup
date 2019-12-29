@@ -10,3 +10,4 @@ resources:
 
 patchesStrategicMerge:
     - ./argo-cd-app.yaml
+    - ./monitoring-projects-path.yaml

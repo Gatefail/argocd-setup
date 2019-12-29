@@ -9,6 +9,7 @@ spec:
   sourceRepos:
   - 'git@github.com:Gatefail/argocd-setup.git'
   - 'git@github.com:Gatefail/argocd-applications.git'
+  - 'git@github.com:Gatefail/argocd-monitoring.git'
   # Only permit applications to deploy to the argocd namespace in the same cluster
   destinations:
   - namespace: argocd

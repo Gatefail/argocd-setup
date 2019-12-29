@@ -8,6 +8,7 @@ data:
   repositories: |
     - url: git@github.com:Gatefail/argocd-setup.git
     - url: git@github.com:Gatefail/argocd-applications.git
+    - url: git@github.com:Gatefail/argocd-monitoring.git
 
   repository.credentials: |
     - url: git@github.com:Gatefail

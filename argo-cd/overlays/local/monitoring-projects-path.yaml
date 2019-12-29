@@ -1,0 +1,10 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring-projects
+  # You'll usually want to add your resources to the argocd namespace.
+  namespace: argocd
+spec:
+  # Source of the application manifests
+  source:
+    path: src/overlays/local
