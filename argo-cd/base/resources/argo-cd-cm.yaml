@@ -9,6 +9,9 @@ data:
     - url: git@github.com:Gatefail/argocd-setup.git
     - url: git@github.com:Gatefail/argocd-applications.git
     - url: git@github.com:Gatefail/argocd-monitoring.git
+    - type: helm
+      url: https://kubernetes-charts.storage.googleapis.com/
+      name: kubernetes-stable
 
   repository.credentials: |
     - url: git@github.com:Gatefail
