@@ -1,5 +1,6 @@
+./setup-kubeseal-local
 kubectl create namespace argocd
-
+kustomize build src/overlays/local | kubectl apply -f -
 ### 
 # Access with port-forward using command:
 # kubectl port-forward svc/argocd-server -n argocd 8001:443
