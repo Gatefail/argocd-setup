@@ -9,7 +9,8 @@ resources:
     - ./resources/argo-cd-app.yaml
     - ./resources/argo-cd-proj.yaml
     - ./resources/monitoring-projects-app.yaml
-    - ./resources/github-secret-sealed.json    
+    - ./resources/github-secret-sealed.json   
+    - ./resources/company-projects-app.yaml 
 
 patchesStrategicMerge:
     - ./resources/argo-cd-cm.yaml
