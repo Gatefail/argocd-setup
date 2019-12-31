@@ -5,4 +5,4 @@ metadata:
   namespace: argocd
 spec:
   source:
-    path: argo-cd/overlays/local
+    path: src/overlays/local

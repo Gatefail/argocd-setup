@@ -7,7 +7,7 @@ then
 fi
 
 GITHUBKEY_LOCATION="/home/ntop/.ssh/github"
-SEALEDSECRET_LOCATION="/home/ntop/projects/argocd-setup/argo-cd/base/resources/github-secret-sealed.json"
+SEALEDSECRET_LOCATION="/home/ntop/projects/argocd-setup/src/base/resources/github-secret-sealed.json"
 UNSEALEDSECRET_NAME="github-secret"
 SEALEDSECRET_NAME="github-secret-sealed.json"
 
