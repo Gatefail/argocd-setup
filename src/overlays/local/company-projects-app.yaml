@@ -8,4 +8,4 @@ metadata:
 spec:
   # Source of the application manifests
   source:
-    path: src/overlays/local
+    path: src/app-of-apps/overlays/local
